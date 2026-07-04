@@ -97,7 +97,7 @@ export default function SmartForm({smartFormRef,formVisible}:{smartFormRef:React
             <CardContainer className="w-full pointer-events-auto">
               <BackgroundGradient className="rounded-xl sm:rounded-2xl p-0.5">
                 <div className="bg-black/95 rounded-lg sm:rounded-xl lg:rounded-2xl p-3 sm:p-4 md:p-6 lg:p-8">
-                  <form className="space-y-3 sm:space-y-4 lg:space-y-6">
+                  <form onSubmit={(e) => { e.preventDefault(); window.location.href = '/form'; }} className="space-y-3 sm:space-y-4 lg:space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
                       <div className="space-y-1 sm:space-y-2">
                         <Label className="text-blue-100 text-xs sm:text-sm lg:text-base">Destination</Label>
@@ -198,9 +198,6 @@ export default function SmartForm({smartFormRef,formVisible}:{smartFormRef:React
                     <div className="flex justify-center pt-2 sm:pt-3 lg:pt-4">
                       <HoverBorderGradient
                         as="button"
-                        onClick={() => {
-                          window.location.href = '/form';
-                        }}
                         className="px-4 sm:px-6 lg:px-8 py-2 sm:py-2.5 lg:py-3 bg-gradient-to-r from-blue-600 to-purple-600 font-medium text-sm sm:text-base lg:text-lg shadow-lg shadow-purple-900/20"
                       >
                         <span className="flex items-center whitespace-nowrap">
