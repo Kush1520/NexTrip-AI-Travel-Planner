@@ -1,8 +1,8 @@
-# Srvtrip
+# NexTrip
 
-**Website:** [https://srvtrip.live](https://srvtrip.live)
+**Website:** [https://nextrip.live](https://nextrip.live) *(Placeholder URL)*
 
-Srvtrip is an AI-powered travel planning platform that generates personalized, detailed itineraries, aggregates authentic reviews, and provides actionable travel insights for destinations worldwide. The platform leverages advanced AI models, real-time web scraping, and a robust microservices architecture to deliver seamless travel planning experiences.
+**NexTrip** is a modern web application built to intelligently automate the logistics of travel planning. At its core is a sophisticated itinerary generation engine that leverages Groq-powered AI and Llama 3 to curate bespoke, multi-day travel schedules tailored to individual user constraints and preferences. Complementing these personalized itineraries, NexTrip delivers an interactive spatial experience via Google Maps for precise route visualization, alongside live weather telemetry and an integrated, context-aware AI assistant for on-demand destination intelligence.
 
 ---
 
@@ -38,7 +38,7 @@ Srvtrip is an AI-powered travel planning platform that generates personalized, d
   Visualize your trip with a day-wise timeline and interactive maps for all destinations and activities.
 
 - **Personal AI Travel Assistant:**  
-  Chatbot provides instant, detailed answers about any place in your itinerary.
+  Chatbot provides instant, detailed answers about any place in your itinerary, backed by semantic search via Weaviate.
 
 - **User Authentication:**  
   Secure signup/signin with Firebase Auth, Google OAuth, and OTP-based flows.
@@ -53,7 +53,7 @@ Srvtrip is an AI-powered travel planning platform that generates personalized, d
 
 ## Architecture Overview
 
-Srvtrip is built as a distributed microservices system:
+NexTrip is built as a distributed microservices system:
 
 - **Frontend:**  
   React + TypeScript SPA, deployed on Vercel/Netlify.
@@ -77,7 +77,7 @@ Srvtrip is built as a distributed microservices system:
 - **Frontend:** React, TypeScript, Redux, Tailwind CSS, Framer Motion
 - **Backend:** Node.js, Express, Prisma, PostgreSQL, dotenv, cookie-parser, rate-limiter
 - **Authentication:** Firebase Auth, Google OAuth, OTP
-- **AI/ML:** Google Gemini, Groq, Weaviate (vector DB), JinaAI, Mistral
+- **AI/ML:** Google Gemini, Groq (Llama 3), Weaviate (vector DB), JinaAI, Mistral
 - **Web Scraping:** Playwright (Chromium/Firefox)
 - **Infrastructure:** Docker, Vercel/Netlify, Cloud VM, environment-based config
 
@@ -180,7 +180,7 @@ Srvtrip is built as a distributed microservices system:
 
 ### Environment Variables
 
-Each service uses `.env` files for configuration. Key variables include:
+Each service uses `.env` files for configuration. See `.env.example` in each directory for required keys. Key variables include:
 
 - `FRONTEND_URL`, `BACKEND_URL`
 - `WEAVIATE_URL`, `WEAVIATE_API_KEY`, `JINAAI_API_KEY`, `GOOGLE_API_KEY`
@@ -191,7 +191,7 @@ Each service uses `.env` files for configuration. Key variables include:
 ### Running Locally
 
 1. **Clone the repo:**  
-   `git clone https://github.com/Rudra-Mittal/srvtrip.git`
+   `git clone https://github.com/Rudra-Mittal/nextrip.git`
 
 2. **Install dependencies:**  
    - Frontend: `cd frontend && npm install`
@@ -199,7 +199,7 @@ Each service uses `.env` files for configuration. Key variables include:
    - Web Scraper: `cd web_scraper && npm install`
    - Load Balancer: `cd load_balancer && npm install`
 
-3. **Configure `.env` files** for each service.
+3. **Configure `.env` files** for each service based on the `.env.example` templates.
 
 4. **Start services:**  
    - Backend: `npm run dev` (port 4000)
@@ -229,9 +229,9 @@ Contributions are welcome! Please open issues or pull requests for improvements,
 
 ## License
 
-Srvtrip is licensed under the MIT License.
+NexTrip is licensed under the MIT License.
 
 ---
 
-**Srvtrip** — AI-powered travel, reimagined.  
-[https://srvtrip.live](https://srvtrip.live)
+**NexTrip** — Intelligent travel orchestration.  
+[https://nextrip.live](https://nextrip.live)
