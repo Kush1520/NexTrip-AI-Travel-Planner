@@ -226,12 +226,3 @@ Each service uses `.env` files for configuration. See `.env.example` in each dir
 Contributions are welcome! Please open issues or pull requests for improvements, bug fixes, or new features.
 
 ---
-
-## License
-
-NexTrip is licensed under the MIT License.
-
----
-
-**NexTrip** — Intelligent travel orchestration.  
-[https://nextrip.live](https://nextrip.live)
