@@ -708,7 +708,7 @@ export default function Form() {
                               mode="single"
                               selected={formData.startdate}
                               onSelect={(date) => handleChange("startdate", date)}
-                              initialFocus
+
                               fromDate={new Date()} // Disable past dates
                               className="bg-black text-white scale-90 sm:scale-100 max-w-[280px] sm:max-w-none"
                             />

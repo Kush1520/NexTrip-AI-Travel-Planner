@@ -22,7 +22,7 @@ const Weather = () => {
   }  
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string | null>(null);
 
   // Get URL parameters to determine current itinerary
   const { itineraryNum } = useParams();
