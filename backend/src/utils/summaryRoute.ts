@@ -12,7 +12,7 @@ export async function summaryRoute(req: any, res: any) {
 
         const data = await prisma.place.findFirst({
             where: { placeId: placeid },
-            select: { summarizedReview: true, rating: true, name: true }
+            select: { summarizedReview: true, rating: true, name: true, address: true }
         });
 
         if (data?.summarizedReview) {
@@ -27,6 +27,21 @@ export async function summaryRoute(req: any, res: any) {
         // This acts as a fallback since the Web Scraper microservice isn't running.
         const placeName = data?.name || "this location";
         
+        // Trigger the scraper via load balancer (Fire and forget)
+        const loadBalancerUrl = process.env.LOAD_BALANCER_URL;
+        if (loadBalancerUrl && data?.name) {
+             fetch(`${loadBalancerUrl}/loadbalancer`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    placeName: data.name,
+                    maxScrolls: 5,
+                    placeId: placeid,
+                    placeAddress: data.address || ""
+                })
+            }).catch(e => console.error("Load balancer trigger failed:", e));
+        }
+
         try {
             const groqResponse = await fetch("https://api.groq.com/openai/v1/chat/completions", {
                 method: "POST",
