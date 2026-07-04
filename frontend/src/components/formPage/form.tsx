@@ -21,7 +21,7 @@ import { genitinerary, genitinerarySSE } from '@/api/formroute';
 import { useDispatch, useSelector } from 'react-redux';
 import { addItinerary } from '@/store/slices/itinerarySlice';
 import { addPlace } from '@/store/slices/placeSlice';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 
 interface FormData {
@@ -41,15 +41,26 @@ interface ValidationErrors {
 }
 
 export default function Form() {
+  const [searchParams] = useSearchParams();
+  
+  // Parse initial values from URL if they exist
+  const initialDestination = searchParams.get('destination') || "";
+  const initialDays = searchParams.get('days') ? parseInt(searchParams.get('days')!) : 7;
+  const budgetParam = searchParams.get('budget');
+  const initialBudget = budgetParam === 'budget' ? 3000 : budgetParam === 'luxury' ? 15000 : 7000;
+  const initialPersons = searchParams.get('persons') ? parseInt(searchParams.get('persons')!) : 2;
+  const initialCustom = searchParams.get('custom') || "";
+  const initialInterests = searchParams.get('interests') ? searchParams.get('interests')!.split(',') : [];
+
   // Form data state
   const [formData, setFormData] = useState<FormData>({
-    destination: "",
-    budget: 5000,
-    number_of_persons: 2,
-    number_of_days: 7,
-    interests: [],
+    destination: initialDestination,
+    budget: initialBudget,
+    number_of_persons: initialPersons,
+    number_of_days: initialDays,
+    interests: initialInterests,
     startdate: undefined,
-    customRequests: "",
+    customRequests: initialCustom,
     currency: "INR"
   });
   

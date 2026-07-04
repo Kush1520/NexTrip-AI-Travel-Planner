@@ -97,7 +97,17 @@ export default function SmartForm({smartFormRef,formVisible}:{smartFormRef:React
             <CardContainer className="w-full pointer-events-auto">
               <BackgroundGradient className="rounded-xl sm:rounded-2xl p-0.5">
                 <div className="bg-black/95 rounded-lg sm:rounded-xl lg:rounded-2xl p-3 sm:p-4 md:p-6 lg:p-8">
-                  <form onSubmit={(e) => { e.preventDefault(); window.location.href = '/form'; }} className="space-y-3 sm:space-y-4 lg:space-y-6">
+                  <form onSubmit={(e) => { 
+                    e.preventDefault(); 
+                    const params = new URLSearchParams();
+                    if (formData.destination) params.set('destination', formData.destination);
+                    if (formData.days) params.set('days', formData.days);
+                    if (formData.budget) params.set('budget', formData.budget);
+                    if (formData.persons) params.set('persons', formData.persons);
+                    if (formData.customRequests) params.set('custom', formData.customRequests);
+                    if (interests.length > 0) params.set('interests', interests.join(','));
+                    window.location.href = `/form?${params.toString()}`;
+                  }} className="space-y-3 sm:space-y-4 lg:space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
                       <div className="space-y-1 sm:space-y-2">
                         <Label className="text-blue-100 text-xs sm:text-sm lg:text-base">Destination</Label>
