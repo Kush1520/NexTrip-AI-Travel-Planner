@@ -31,6 +31,7 @@ import {
 } from './middleware/rateLimiter';
 dotenv.config();
 const app = express();
+app.set('trust proxy', 1);
 const PORT = 4000;
 // Rate limiting
 app.use(generalLimiter);
