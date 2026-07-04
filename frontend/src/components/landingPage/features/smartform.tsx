@@ -3,7 +3,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { TextRevealCard } from "@/components/ui/text-reveal-card";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import { useState } from "react";
-import { CardBody, CardItem } from "@/components/ui/3d-card";
+
 import { BackgroundGradient } from "@/components/ui/backgroud-gradient";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
