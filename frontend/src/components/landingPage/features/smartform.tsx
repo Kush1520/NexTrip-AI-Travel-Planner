@@ -198,9 +198,7 @@ export default function SmartForm({smartFormRef,formVisible}:{smartFormRef:React
                     <div className="flex justify-center pt-2 sm:pt-3 lg:pt-4">
                       <HoverBorderGradient
                         as="button"
-                        type="button"
-                        onClick={(e) => {
-                          e.preventDefault();
+                        onClick={() => {
                           window.location.href = '/form';
                         }}
                         className="px-4 sm:px-6 lg:px-8 py-2 sm:py-2.5 lg:py-3 bg-gradient-to-r from-blue-600 to-purple-600 font-medium text-sm sm:text-base lg:text-lg shadow-lg shadow-purple-900/20"
