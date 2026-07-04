@@ -1,0 +1,72 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String        @id @default(uuid())
+  email       String        @unique
+  password    String
+  name        String    
+  itineraries Itinerary[]
+}
+
+model Itinerary {
+  id                String       @id @default(uuid())
+  destination       String
+  duration          Int
+  budget            Float
+  startdate         DateTime  @default(now())
+  description       String?
+  numberOfPersons   Int
+  interests         String[]
+  totalBudgetUsed   String
+  remainingBudget   String     
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+  userId            String
+  user              User      @relation(fields: [userId], references: [id])
+  days              Day[]
+}
+
+model Day {
+  id              String       @id @default(uuid())
+  dayNumber       Int
+  morning         String
+  afternoon       String
+  evening         String
+  proTip          String?
+  places          Place[]
+  itineraryId     String
+  itinerary       Itinerary @relation(fields: [itineraryId], references: [id])
+  @@unique([dayNumber, itineraryId])
+}
+
+model Place {
+  id                String       @id @default(uuid())
+  name              String    // Display name
+  placeId           String    @unique// Places API ID
+  address           String    //formatted address
+  latitude          Float
+  longitude         Float
+  url               String?   
+  rating            Float?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+  images            Image[]
+  summarizedReview  String?
+  day               Day[] 
+}
+
+model Image {
+  id            String       @id @default(uuid())
+  imageUrl      String
+  placeId       String
+  place         Place   @relation(fields: [placeId], references: [placeId])
+}
+
