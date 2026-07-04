@@ -1,6 +1,6 @@
 # NexTrip
 
-**Website:** [https://nextrip.live](https://nextrip.live) *(Placeholder URL)*
+**Website:** [https://nex-trip-ai-travel-planner.vercel.app](https://nex-trip-ai-travel-planner.vercel.app)
 
 **NexTrip** is a modern web application built to intelligently automate the logistics of travel planning. At its core is a sophisticated itinerary generation engine that leverages Groq-powered AI and Llama 3 to curate bespoke, multi-day travel schedules tailored to individual user constraints and preferences. Complementing these personalized itineraries, NexTrip delivers an interactive spatial experience via Google Maps for precise route visualization, alongside live weather telemetry and an integrated, context-aware AI assistant for on-demand destination intelligence.
 
