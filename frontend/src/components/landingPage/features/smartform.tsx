@@ -3,7 +3,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { TextRevealCard } from "@/components/ui/text-reveal-card";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import { useState } from "react";
-import { CardContainer } from "@/components/ui/3d-card";
+import { CardBody, CardItem } from "@/components/ui/3d-card";
 import { BackgroundGradient } from "@/components/ui/backgroud-gradient";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -94,7 +94,7 @@ export default function SmartForm({smartFormRef,formVisible}:{smartFormRef:React
             className="max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-4xl mx-auto"
           >
 
-            <CardContainer className="w-full pointer-events-auto">
+            <div className="w-full relative z-50 mt-10 mb-20">
               <BackgroundGradient className="rounded-xl sm:rounded-2xl p-0.5">
                 <div className="bg-black/95 rounded-lg sm:rounded-xl lg:rounded-2xl p-3 sm:p-4 md:p-6 lg:p-8">
                   <form onSubmit={(e) => { 
@@ -218,7 +218,7 @@ export default function SmartForm({smartFormRef,formVisible}:{smartFormRef:React
                   </form>
                 </div>
               </BackgroundGradient>
-            </CardContainer>
+            </div>
 
             {/* text reveal */}
             <div className="mt-4 sm:mt-6 lg:mt-10 mb-2 sm:mb-4 lg:mb-8">
