@@ -9,6 +9,7 @@
 ## Table of Contents
 
 - [Features](#features)
+- [Screenshots](#screenshots)
 - [Architecture Overview](#architecture-overview)
 - [Tech Stack](#tech-stack)
 - [Key Components](#key-components)
@@ -48,6 +49,40 @@
 
 - **Scalable Microservices:**  
   Distributed architecture with load-balanced web scrapers and robust backend APIs.
+
+---
+
+## Screenshots
+
+### 1. Landing & Welcome Pages
+* **Main Landing Page Grid:**
+  ![Landing Page](overview/home.png)
+* **Journey Setup Banner:**
+  ![Journey Banner](overview/dream_journey.png)
+
+### 2. Planning & Itinerary Creation
+* **Multi-step Creation Wizard:**
+  ![Create Wizard](overview/plan_trip.png)
+* **Creation Form (Details & Interests):**
+  ![Creation Form](overview/create_itinerary_form.png)
+
+### 3. Generated Itineraries & Route Maps
+* **Day-by-Day Overview Dashboard:**
+  ![Itinerary Overview](overview/itinerary_overview.png)
+* **Detailed Day View & Local Context:**
+  ![Itinerary Details](overview/itinerary_details.png)
+* **Interactive Travel Route Map:**
+  ![Route Map](overview/travel_route_map.png)
+
+### 4. Personal AI Travel Assistant
+* **Contextual AI Chat panel:**
+  ![AI Assistant](overview/ai_assistant.png)
+* **AI Travel Companion Feature Page:**
+  ![AI Companion Page](overview/ai_travel_companion.png)
+
+### 5. Itinerary Management & Travel History
+* **User Travel History Dashboard:**
+  ![Travel History](overview/travel_history.png)
 
 ---
 
@@ -191,7 +226,7 @@ Each service uses `.env` files for configuration. See `.env.example` in each dir
 ### Running Locally
 
 1. **Clone the repo:**  
-   `git clone https://github.com/Rudra-Mittal/nextrip.git`
+   `git clone <repository-url>`
 
 2. **Install dependencies:**  
    - Frontend: `cd frontend && npm install`
